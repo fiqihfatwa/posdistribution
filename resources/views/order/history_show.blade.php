@@ -12,9 +12,11 @@
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
+            @include('coreui-templates::common.errors')
+
             @if (session('status'))
-            <div class="alert alert-danger fade show" role="alert">
-                {{ session('status') }}
+            <div class="alert {{ session('status') }} fade show" role="alert">
+                {{ session('message') }}
             </div>
             @endif
 
@@ -114,7 +116,7 @@
                          <div class="card-body">
                             
 
-
+ 
                          </div>
                      </div>
                 </div>
@@ -123,21 +125,25 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                      <div class="card">
-                         <div class="card-header">
-                             Payment Upload
-                         </div>
-                         <div class="card-body">
-                            @if ($transaction->status_id == 1)
-                                <input type="file" >
-                            @else
-                                <img src='{!! Storage::url("$transaction->payment_img") !!}' height="200">
-                            @endif    
-                         </div>
-                         @if ($transaction->status_id == 1)
-                         <div class="card-footer">
-                            <button type='submit' class='btn btn-block btn-success'>Upload</button>
+                        <div class="card-header">
+                            Payment Upload
                         </div>
-                        @endif
+
+                        @if ($transaction->status_id == 1)
+                            {!! Form::open(['route' => ['order.update', $transaction->id], 'enctype' => 'multipart/form-data', 'method' => 'patch']) !!}
+                                <div class="card-body">
+                                    {!! Form::file('payment_img'); !!}
+                                </div>     
+                                <div class="card-footer">
+                                    {!! Form::submit('Upload', ['class' => 'btn btn-block btn-success']) !!}
+                                </div>
+                            {!! Form::close() !!}
+                        @else
+                            <div class="card-body">
+                                <img src='{!! Storage::url("$transaction->payment_img") !!}' height="200">
+                            </div>
+                        @endif    
+                        
                      </div>
                 </div>
             </div>           

@@ -34,7 +34,6 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-@if (URL::previous() == route('users.all'))
 @if (!empty($parent->id))
 <!-- Created By Field -->
 <div class="form-group">
@@ -48,7 +47,6 @@
     {!! Form::label('role_id', 'Role:') !!}
     <p>{!! $user->role->name !!}</p>
 </div>
-@endif
 
 <!-- Created At Field -->
 <div class="form-group">

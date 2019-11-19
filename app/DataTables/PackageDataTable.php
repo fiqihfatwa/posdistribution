@@ -30,7 +30,7 @@ class PackageDataTable extends DataTable
      */
     public function query(Package $model)
     {
-        return $model->newQuery()->where('user_id', Auth::user()->id);
+        return $model->newQuery();
     }
 
     /**
@@ -69,6 +69,7 @@ class PackageDataTable extends DataTable
             'name',
             'amount',
             'price',
+            'user_id' => ['data' => 'user.name'],
         ];
     }
 

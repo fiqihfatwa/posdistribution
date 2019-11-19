@@ -60,7 +60,6 @@
             {!! Form::password('password_confirmation', ['class' => 'form-control','minlength' => 8]) !!}
         </div>
 
-        @if (URL::previous() == route('users.all'))
         <!-- Created By Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('created_by', 'Created By') !!}
@@ -72,7 +71,6 @@
             {!! Form::label('role_id', 'Role') !!}
             {!! Form::select('role_id', $roleItems, null, ['class' => 'form-control']) !!}
         </div>
-        @endif
 
     </div>
 </div>

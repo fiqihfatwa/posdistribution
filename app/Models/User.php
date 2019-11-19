@@ -156,5 +156,14 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Role');
     }
 
+    /**
+     * Get childs user.
+     */
+    public function childs() {
+
+        return $this->hasMany('App\Models\User','created_by','id') ;
+
+    }
+
     
 }

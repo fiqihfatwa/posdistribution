@@ -4,11 +4,7 @@
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
              <a href="{!! route('users.index') !!}">
-             @if (URL::previous() == route('users.all'))
-                Users
-             @else
-                Customer
-             @endif
+                All Users
              </a>
           </li>
           <li class="breadcrumb-item active">Edit</li>

@@ -3,12 +3,8 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{!! URL::previous() !!}">
-                @if (URL::previous() == route('users.all'))
-                    Users
-                @else
-                    Customer
-                @endif
+                <a href="{!! route('users.index') !!}">
+                    All Users
                 </a>
             </li>
             <li class="breadcrumb-item active">Detail</li>
@@ -30,7 +26,6 @@
                      </div>
                  </div>
 
-                @if (URL::previous() == route('users.all'))
                  @include('layouts.tree_css')
 
                  <div class="row">
@@ -60,7 +55,7 @@
                          </div>
                      </div>
                  </div>
-                @endif
+
           </div>
     </div>
 @endsection

@@ -31,11 +31,7 @@ class UserDataTable extends DataTable
      */
     public function query(User $model)
     {
-        if(url()->current() == route('users.all')) {
-            return $model->newQuery();
-        } else {
-            return $model->newQuery()->where('created_by', Auth::user()->id);
-        }
+        return $model->newQuery();
     }
 
     /**
@@ -72,12 +68,12 @@ class UserDataTable extends DataTable
     {
         return [
             'name',
-            'nik' => new \Yajra\DataTables\Html\Column(['title' => 'NIK', 'data' => 'nik', 'name' => 'nik']),
+            'nik' => ['title' => 'NIK'],
             'gender',
             'phone',
             'email',
             'address',         
-            // 'role_id' => new \Yajra\DataTables\Html\Column(['title' => 'Role', 'data' => 'role.name', 'name' => 'role.name']),
+            'role_id' => ['title' => 'Role', 'data' => 'role.name', 'name' => 'role.name'],
         ];
     }
 

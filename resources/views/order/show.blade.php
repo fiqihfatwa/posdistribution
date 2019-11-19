@@ -6,11 +6,13 @@
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
-                @if (session('status'))
-                <div class="alert alert-danger fade show" role="alert">
-                    {{ session('status') }}
-                </div>
-                @endif
+            @include('coreui-templates::common.errors')
+
+            @if (session('status'))
+            <div class="alert {{ session('status') }} fade show" role="alert">
+                {{ session('message') }}
+            </div>
+            @endif
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -42,15 +44,16 @@
                                 </tr>
                             </table>
 
-                            <form method="post" action="{{ route('transactions.store') }}">
-                                @csrf
+                            {!! Form::open(['route' => 'order.store']) !!}
+                                <!--                                                                 
                                 <input type='hidden' name='transaction_number' value='AUTO_GENERATE'>
-                                <input type='hidden' name='package_id' value='{{$package->id}}'>
+                                <input type='hidden' name='shop_id' value='{{$package->user_id}}'>
                                 <input type='hidden' name='status_id' value='1'>
                                 <input type='hidden' name='customer_id' value='{{Auth::user()->id}}'>
-                                <input type='hidden' name='shop_id' value='{{$package->user_id}}'>
-                                <input class="btn btn-block btn-success btn-pill" type="submit" value='Confirm'>
-                            </form>
+                                 -->
+                                {!! Form::hidden('package_id', $package->id) !!}
+                                {!! Form::submit('Confirm', ['class' => 'btn btn-block btn-success btn-pill']) !!}
+                            {!! Form::close() !!}
                          </div>
                      </div>
                 </div>

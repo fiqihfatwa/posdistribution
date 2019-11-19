@@ -26,7 +26,12 @@ class UpdateTransactionRequest extends FormRequest
     public function rules()
     {
         $rules = Transaction::$rules;
+        $rules['transaction_number'] = '';
         $rules['grand_total'] = '';
+        $rules['package_id'] = '';
+        $rules['shop_id'] = '';
+        $rules['customer_id'] = '';
+        $rules['status_id'] = '';
         
         return $rules;
     }

@@ -30,7 +30,7 @@ class LicenseDataTable extends DataTable
      */
     public function query(License $model)
     {
-        return $model->newQuery()->where('user_id', Auth::user()->id);
+        return $model->newQuery();
     }
 
     /**
@@ -67,6 +67,8 @@ class LicenseDataTable extends DataTable
     {
         return [
             'license_key',
+            'sold_in',
+            'user_id' => ['data' => 'user.name'],
         ];
     }
 

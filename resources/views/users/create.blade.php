@@ -3,12 +3,8 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! URL::previous() !!}">
-         @if (URL::previous() == route('users.all'))
-            Users
-         @else
-            Customer
-         @endif
+         <a href="{!! route('users.index') !!}">
+            All Users
          </a>
       </li>
       <li class="breadcrumb-item active">Create</li>

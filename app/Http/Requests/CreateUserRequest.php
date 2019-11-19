@@ -28,8 +28,7 @@ class CreateUserRequest extends FormRequest
     {
         $rules = User::$rules;
         $rules['created_by'] = '';
-        $rules['role_id'] = '';
-        
+        $rules['role_id'] = '';   
 
         return $rules;
     }

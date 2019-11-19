@@ -20,25 +20,25 @@
 @endif
 <li class="nav-title">My Shop</li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('users*') && Request::path() != 'users/all' ? 'active' : '' }}" href="{!! route('users.index') !!}">
+    <a class="nav-link {{ Request::is('customer*') ? 'active' : '' }}" href="{!! route('customer.index') !!}">
         <i class="nav-icon icon-user"></i>
         <span>Customer</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('licenses*') ? 'active' : '' }}" href="{!! route('licenses.index') !!}">
+    <a class="nav-link {{ Request::is('mylicense*') ? 'active' : '' }}" href="{!! route('mylicense.index') !!}">
         <i class="nav-icon icon-key"></i>
         <span>Stocks</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('packages*') ? 'active' : '' }}" href="{!! route('packages.index') !!}">
+    <a class="nav-link {{ Request::is('mypackage*') ? 'active' : '' }}" href="{!! route('mypackage.index') !!}">
         <i class="nav-icon icon-layers"></i>
         <span>Packages</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link  {{ Request::is('transactions*') ? 'active' : '' }}" href="{!! route('transactions.index') !!}">
+    <a class="nav-link  {{ Request::is('mytransaction*') ? 'active' : '' }}" href="{!! route('mytransaction.index') !!}">
         <i class="nav-icon icon-bag"></i>
         <span>Transactions</span>
     </a>
@@ -52,25 +52,25 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('users.all') ? 'active' : '' }}" href="{!! route('users.all') !!}">
+    <a class="nav-link {{ Request::is('users*') ? 'active' : '' }}" href="{!! route('users.index') !!}">
         <i class="nav-icon icon-people"></i>
         <span>All User</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('licenses.all') ? 'active' : '' }}" href="{!! route('licenses.all') !!}">
+    <a class="nav-link {{ Request::is('licenses*') ? 'active' : '' }}" href="{!! route('licenses.index') !!}">
         <i class="nav-icon icon-key"></i>
         <span>All License</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('packages.all') ? 'active' : '' }}" href="{!! route('packages.all') !!}">
+    <a class="nav-link {{ Request::is('packages*') ? 'active' : '' }}" href="{!! route('packages.index') !!}">
         <i class="nav-icon icon-layers"></i>
         <span>All Packages</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link  {{ Request::is('transactions.all') ? 'active' : '' }}" href="{!! route('transactions.all') !!}">
+    <a class="nav-link  {{ Request::is('transactions*') ? 'active' : '' }}" href="{!! route('transactions.index') !!}">
         <i class="nav-icon icon-bag"></i>
         <span>All Transactions</span>
     </a>

@@ -6,6 +6,8 @@
 </ol>
   <div class="container-fluid">
         <div class="animated fadeIn">
+
+            
             
             @if (Auth::user()->role_id == 1)
             <div class="row">
@@ -65,7 +67,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-body text-center" style="background-color: #e1f5fe">
+                        <div class="card-body text-center" style="background-color: #ffcdd2">
                             <div class="text-muted small text-uppercase font-weight-bold">New Payment</div>
                             <div class="text-value-lg py-3">{{$newpayment}}</div>
                         </div>

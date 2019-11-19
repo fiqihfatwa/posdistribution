@@ -69,9 +69,10 @@ class TransactionDataTable extends DataTable
             'customer' => ['data' => 'customer.name'],
             'seller' => ['data' => 'seller.name'],
             'package' => ['data' => 'package.name'],
-            'qty of license' => ['data' => 'package.amount'],
+            'qty' => ['data' => 'package.amount'],
             'grand_total',
             'status' => ['data' => 'status.name', 'render' => '"<span class=\"badge badge-primary\">"+data+"</span>"'],
+            'created_at',
         ];
     }
 
